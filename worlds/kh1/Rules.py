@@ -1095,6 +1095,7 @@ def set_rules(kh1world):
                 state.has("Theon Vol. 6", player)
                 or state.has("High Jump", player, 3)
                 or has_emblems(state, player, options.keyblades_unlock_chests)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
             and state.has("Progressive Fire", player)
             and
@@ -1110,6 +1111,7 @@ def set_rules(kh1world):
             state.has("Theon Vol. 6", player)
             or state.has("High Jump", player, 3)
             or has_emblems(state, player, options.keyblades_unlock_chests)
+            or (options.advanced_logic and state.has("High Jump", player, 2))
         ))
     add_rule(kh1world.get_location("Hollow Bastion Entrance Hall Emblem Piece (Statue)"),
         lambda state: (
@@ -1117,6 +1119,7 @@ def set_rules(kh1world):
                 state.has("Theon Vol. 6", player)
                 or state.has("High Jump", player, 3)
                 or has_emblems(state, player, options.keyblades_unlock_chests)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
             and state.has("Red Trinity", player)
         ))
@@ -1125,6 +1128,7 @@ def set_rules(kh1world):
             state.has("Theon Vol. 6", player)
             or state.has("High Jump", player, 3)
             or has_emblems(state, player, options.keyblades_unlock_chests)
+            or (options.advanced_logic and state.has("High Jump", player, 2))
         ))
     add_rule(kh1world.get_location("Hollow Bastion Library Speak to Belle Divine Rose"),
         lambda state: has_emblems(state, player, options.keyblades_unlock_chests))
