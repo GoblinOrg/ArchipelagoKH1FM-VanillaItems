@@ -1929,7 +1929,7 @@ def set_rules(kh1world):
         add_rule(kh1world.get_location("End of the World Final Rest Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("Monstro Chamber 6 White Trinity Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Wishing Star", player))
         if options.hundred_acre_wood:
             add_rule(kh1world.get_location("100 Acre Wood Meadow Inside Log Chest"),
                 lambda state: state.has("Oathkeeper", player))
