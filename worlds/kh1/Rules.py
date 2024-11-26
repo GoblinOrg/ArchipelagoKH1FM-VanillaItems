@@ -140,6 +140,7 @@ def set_rules(kh1world):
         lambda state: (
             state.has("Green Trinity", player)
             or state.has("High Jump", player, 3)
+            or (options.advanced_logic and state.has("High Jump", player, 2))
         ))
     add_rule(kh1world.get_location("Traverse Town 1st District Blue Trinity Balcony Chest"),
         lambda state: (
@@ -174,6 +175,7 @@ def set_rules(kh1world):
         lambda state: (
             state.has("Green Trinity", player)
             or state.has("High Jump", player, 3)
+            or (options.advanced_logic and state.has("High Jump", player, 2))
         ))
     add_rule(kh1world.get_location("Wonderland Rabbit Hole Green Trinity Chest"),
         lambda state: state.has("Green Trinity", player))
@@ -280,10 +282,11 @@ def set_rules(kh1world):
             or
             (
                 options.advanced_logic
-                and state.has_all({
-                    "High Jump",
-                    "Footprints",
-                    "Combo Master"}, player)
+                and 
+                (
+                    state.has_all({"High Jump", "Footprints", "Combo Master"}, player)
+                    or (state.has("High Jump", player, 2) and state.has("Footprints", player))
+                )
             )
         ))
     add_rule(kh1world.get_location("Wonderland Lotus Forest Through the Painting White Trinity Chest"),
@@ -1015,6 +1018,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Synth Cloth"),
@@ -1024,6 +1028,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Synth Rope"),
@@ -1033,6 +1038,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Synth Seagull Egg"),
@@ -1042,6 +1048,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Synth Fish"),
@@ -1051,6 +1058,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Synth Mushroom"),
@@ -1060,6 +1068,7 @@ def set_rules(kh1world):
             (
                 state.has("Green Trinity", player)
                 or state.has("High Jump", player, 3)
+                or (options.advanced_logic and state.has("High Jump", player, 2))
             )
         ))
     add_rule(kh1world.get_location("Traverse Town Gizmo Shop Postcard 1"),
@@ -1070,6 +1079,7 @@ def set_rules(kh1world):
         lambda state: (
             state.has("Green Trinity", player)
             or state.has("High Jump", player, 3)
+            or (options.advanced_logic and state.has("High Jump", player, 2))
         ))
     add_rule(kh1world.get_location("Traverse Town Geppetto's House Postcard"),
         lambda state: (
@@ -1874,24 +1884,24 @@ def set_rules(kh1world):
             lambda state: state.has("Divine Rose", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 1st Chest"),
             lambda state: state.has("Oblivion", player))
-        add_rule(kh1world.get_location("End of the World Final Dimension 2nd Chest"),
-            lambda state: state.has("Oblivion", player))
+        #add_rule(kh1world.get_location("End of the World Final Dimension 2nd Chest"),
+        #    lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 3rd Chest"),
             lambda state: state.has("Oblivion", player))
-        add_rule(kh1world.get_location("End of the World Final Dimension 4th Chest"),
-            lambda state: state.has("Oblivion", player))
+        #add_rule(kh1world.get_location("End of the World Final Dimension 4th Chest"),
+        #    lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 5th Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 6th Chest"),
             lambda state: state.has("Oblivion", player))
-        add_rule(kh1world.get_location("End of the World Final Dimension 10th Chest"),
-            lambda state: state.has("Oblivion", player))
+        #add_rule(kh1world.get_location("End of the World Final Dimension 10th Chest"),
+        #    lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 9th Chest"),
             lambda state: state.has("Oblivion", player))
-        add_rule(kh1world.get_location("End of the World Final Dimension 8th Chest"),
-            lambda state: state.has("Oblivion", player))
-        add_rule(kh1world.get_location("End of the World Final Dimension 7th Chest"),
-            lambda state: state.has("Oblivion", player))
+        #add_rule(kh1world.get_location("End of the World Final Dimension 8th Chest"),
+        #    lambda state: state.has("Oblivion", player))
+        #add_rule(kh1world.get_location("End of the World Final Dimension 7th Chest"),
+        #    lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Giant Crevasse 3rd Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Giant Crevasse 5th Chest"),
