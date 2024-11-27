@@ -724,6 +724,7 @@ def set_rules(kh1world):
     add_rule(kh1world.get_location("End of the World Giant Crevasse 5th Chest"),
         lambda state: (
             state.has("Progressive Glide", player)
+            or options.advanced_logic
         ))
     add_rule(kh1world.get_location("End of the World Giant Crevasse 1st Chest"),
         lambda state: (
@@ -734,8 +735,8 @@ def set_rules(kh1world):
         lambda state: (
             (
                 options.advanced_logic
-                and state.has("High Jump", player)
-                and state.has("Combo Master", player)
+                and state.has_all({"High Jump", "Combo Master"}, player)
+                or state.has("High Jump", player, 2)
             )
             or state.has("Progressive Glide", player)
         ))
