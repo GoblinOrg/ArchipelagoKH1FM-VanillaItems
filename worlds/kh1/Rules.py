@@ -1891,23 +1891,23 @@ def set_rules(kh1world):
         add_rule(kh1world.get_location("End of the World Final Dimension 1st Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 2nd Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Oblivion", player) or options.advanced_logic)
         add_rule(kh1world.get_location("End of the World Final Dimension 3rd Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 4th Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Oblivion", player) or options.advanced_logic)
         add_rule(kh1world.get_location("End of the World Final Dimension 5th Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 6th Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 10th Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Oblivion", player) or options.advanced_logic)
         add_rule(kh1world.get_location("End of the World Final Dimension 9th Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Final Dimension 8th Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Oblivion", player) or options.advanced_logic)
         add_rule(kh1world.get_location("End of the World Final Dimension 7th Chest"),
-            lambda state: state.has("Oblivion", player))
+            lambda state: state.has("Oblivion", player) or options.advanced_logic)
         add_rule(kh1world.get_location("End of the World Giant Crevasse 3rd Chest"),
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("End of the World Giant Crevasse 5th Chest"),
@@ -1938,6 +1938,18 @@ def set_rules(kh1world):
             lambda state: state.has("Oblivion", player))
         add_rule(kh1world.get_location("Monstro Chamber 6 White Trinity Chest"),
             lambda state: state.has("Wishing Star", player))
+        add_rule(kh1world.get_location("Neverland Hold Aero Chest"),
+            lambda state: state.has("Fairy Harp", player) or options.advanced_logic)
+        add_rule(kh1world.get_location("Hollow Bastion Library 1st Floor Turn the Carousel Chest"),
+            lambda state: state.has("Divine Rose", player) or options.advanced_logic)
+        add_rule(kh1world.get_location("Hollow Bastion Library Top of Bookshelf Turn the Carousel Chest"),
+            lambda state: state.has("Divine Rose", player) or options.advanced_logic)
+        add_rule(kh1world.get_location("Hollow Bastion Library 2nd Floor Turn the Carousel 1st Chest"),
+            lambda state: state.has("Divine Rose", player) or options.advanced_logic)
+        add_rule(kh1world.get_location("Hollow Bastion Library 2nd Floor Turn the Carousel 2nd Chest"),
+            lambda state: state.has("Divine Rose", player) or options.advanced_logic)
+        add_rule(kh1world.get_location("Hollow Bastion Entrance Hall Emblem Piece (Chest)"),
+            lambda state: state.has("Divine Rose", player) or options.advanced_logic)
         if options.hundred_acre_wood:
             add_rule(kh1world.get_location("100 Acre Wood Meadow Inside Log Chest"),
                 lambda state: state.has("Oathkeeper", player))
