@@ -19,6 +19,7 @@ kh1_option_presets: Dict[str, Dict[str, Any]] = {
         "hundred_acre_wood": False,
         "cups": False,
         "vanilla_emblem_pieces": True,
+        "randomize_postcards": RandomizePostcards.option_all,
         
         "exp_multiplier": 48,
         "level_checks": 100,
@@ -64,6 +65,7 @@ kh1_option_presets: Dict[str, Dict[str, Any]] = {
         "hundred_acre_wood": False,
         "cups": False,
         "vanilla_emblem_pieces": True,
+        "randomize_postcards": RandomizePostcards.option_all,
         
         "exp_multiplier": 48,
         "level_checks": 100,
@@ -109,6 +111,7 @@ kh1_option_presets: Dict[str, Dict[str, Any]] = {
         "hundred_acre_wood": True,
         "cups": True,
         "vanilla_emblem_pieces": False,
+        "randomize_postcards": RandomizePostcards.option_all,
         
         "exp_multiplier": 48,
         "level_checks": 100,
@@ -154,6 +157,7 @@ kh1_option_presets: Dict[str, Dict[str, Any]] = {
         "hundred_acre_wood": False,
         "cups": False,
         "vanilla_emblem_pieces": True,
+        "randomize_postcards": RandomizePostcards.option_all,
         
         "exp_multiplier": 16,
         "level_checks": 0,
