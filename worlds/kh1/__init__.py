@@ -131,6 +131,8 @@ class KH1World(World):
         prefilled_items = []
         if self.options.vanilla_emblem_pieces:
             prefilled_items = prefilled_items + ["Emblem Piece (Flame)", "Emblem Piece (Chest)", "Emblem Piece (Fountain)", "Emblem Piece (Statue)"]
+        if self.options.randomize_postcards.current_key not in ["all"]:
+            prefilled_items = prefilled_items + ["Postcard"]
         
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
         
@@ -217,6 +219,18 @@ class KH1World(World):
             self.get_location("Hollow Bastion Entrance Hall Emblem Piece (Statue)").place_locked_item(self.create_item("Emblem Piece (Statue)"))
             self.get_location("Hollow Bastion Entrance Hall Emblem Piece (Fountain)").place_locked_item(self.create_item("Emblem Piece (Fountain)"))
             self.get_location("Hollow Bastion Entrance Hall Emblem Piece (Chest)").place_locked_item(self.create_item("Emblem Piece (Chest)"))
+        if self.options.randomize_postcards.current_key not in ["all"]:
+            self.get_location("Traverse Town Item Shop Postcard").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town 1st District Safe Postcard").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town Gizmo Shop Postcard 1").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town Gizmo Shop Postcard 2").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town Item Workshop Postcard").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town 3rd District Balcony Postcard").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town Geppetto's House Postcard").place_locked_item(self.create_item("Postcard"))
+        if self.options.randomize_postcards.current_key == "off":
+            self.get_location("Traverse Town 1st District Accessory Shop Roof Chest").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town 2nd District Boots and Shoes Awning Chest").place_locked_item(self.create_item("Postcard"))
+            self.get_location("Traverse Town 1st District Blue Trinity Balcony Chest").place_locked_item(self.create_item("Postcard"))
 
     def get_filler_item_name(self) -> str:
         weights = [data.weight for data in self.fillers.values()]
