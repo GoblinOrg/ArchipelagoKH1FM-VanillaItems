@@ -378,6 +378,19 @@ class VanillaEmblemPieces(DefaultOnToggle):
     """
     display_name = "Vanilla Emblem Pieces"
 
+class RandomizePostcards(Choice):
+    """
+    Determines how Postcards are randomized
+
+    All: All Postcards are randomized
+    Chests: Only the 3 Postcards in chests are randomized
+    Off: Postcards are in their original location
+    """
+    display_name = "Randomize Postcards"
+    option_all = 0
+    option_chests = 1
+    option_off = 2
+
 class StartingWorlds(Range):
     """
     Number of random worlds to start with in addition to Traverse Town, which is always available.  Will only consider Atlantica if toggled, and will only consider End of the World if its unlock is set to "Item".
@@ -410,6 +423,7 @@ class KH1Options(PerGameCommonOptions):
     extra_shared_abilities: ExtraSharedAbilities
     exp_zero_in_pool: EXPZeroInPool
     vanilla_emblem_pieces: VanillaEmblemPieces
+    randomize_postcards: RandomizePostcards
     donald_death_link: DonaldDeathLink
     goofy_death_link: GoofyDeathLink
     keyblade_stats: KeybladeStats
@@ -446,6 +460,7 @@ kh1_option_groups = [
         Cups,
         HundredAcreWood,
         VanillaEmblemPieces,
+        RandomizePostcards,
     ]),
     OptionGroup("Levels", [
         EXPMultiplier,
