@@ -389,7 +389,7 @@ class RandomizePostcards(Choice):
     display_name = "Randomize Postcards"
     option_all = 0
     option_chests = 1
-    option_off = 2
+    option_vanilla = 2
 
 class StartingWorlds(Range):
     """
