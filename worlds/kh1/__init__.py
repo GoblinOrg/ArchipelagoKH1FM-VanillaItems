@@ -180,6 +180,9 @@ class KH1World(World):
             elif name == "EXP Zero":
                 if self.options.exp_zero_in_pool:
                     item_pool += [self.create_item(name) for _ in range(0, quantity)]
+            elif name == "Postcard":
+                if self.options.randomize_postcards.current_key == "chests":
+                    item_pool += [self.create_item(name) for _ in range(0, 3)]
             elif name not in prefilled_items:
                 item_pool += [self.create_item(name) for _ in range(0, quantity)]
         
@@ -227,7 +230,7 @@ class KH1World(World):
             self.get_location("Traverse Town Item Workshop Postcard").place_locked_item(self.create_item("Postcard"))
             self.get_location("Traverse Town 3rd District Balcony Postcard").place_locked_item(self.create_item("Postcard"))
             self.get_location("Traverse Town Geppetto's House Postcard").place_locked_item(self.create_item("Postcard"))
-        if self.options.randomize_postcards.current_key == "off":
+        if self.options.randomize_postcards.current_key == "vanilla":
             self.get_location("Traverse Town 1st District Accessory Shop Roof Chest").place_locked_item(self.create_item("Postcard"))
             self.get_location("Traverse Town 2nd District Boots and Shoes Awning Chest").place_locked_item(self.create_item("Postcard"))
             self.get_location("Traverse Town 1st District Blue Trinity Balcony Chest").place_locked_item(self.create_item("Postcard"))
