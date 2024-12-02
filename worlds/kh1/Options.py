@@ -384,7 +384,7 @@ class RandomizePostcards(Choice):
 
     All: All Postcards are randomized
     Chests: Only the 3 Postcards in chests are randomized
-    Off: Postcards are in their original location
+    Vanilla: Postcards are in their original location
     """
     display_name = "Randomize Postcards"
     option_all = 0
